@@ -4,13 +4,12 @@ import Movie from "./body/movie"
 
 export default class Body extends React.Component {
     render_movie(arr) {
-	return arr.map((m, index) => <Movie key={index} image={m} />);
+	return arr.map((m, index) => <Movie key={index} playable={m} />);
     }
     render() {
-	const img = this.props.images;
 	return (
 	    <div>
-		{this.render_movie(img)}
+		{this.render_movie(this.props.playables)}
 	    </div>
 	)
     }
