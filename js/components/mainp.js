@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import Header from "./header";
 import Footer from "./footer";
@@ -28,7 +28,6 @@ export default class MainP extends React.Component {
     render() {
     	return (
 	  <div>
-	      <Button bsStyle="success">Click</Button>
 	      <Header />
 	      <Body playables={this.state.playables}/>
 	      <Footer />

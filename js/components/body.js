@@ -1,4 +1,5 @@
 import React from "react";
+import { Grid } from 'react-bootstrap';
 
 import Movie from "./body/movie"
 import Selector from "./body/selector"
@@ -18,10 +19,10 @@ export default class Body extends React.Component {
     }
     render() {
 	return (
-	    <div>
+	    <Grid>
 		{this.render_movie(this.props.playables)}
 		<Selector value={this.state.value} />
-	    </div>
+	    </Grid>
 	)
     }
 }
