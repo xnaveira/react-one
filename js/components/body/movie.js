@@ -10,7 +10,7 @@ export default class Movie extends React.Component {
 	    	<div>
 				<div>
 					<Video
-						src="http://www.w3schools.com/html/mov_bbb.mp4"
+						src="http://ipfs.io/ipfs/QmX4ZZSGA6HLtwGkDmaEBmTyqZhWjcJQcoydrdmiBmnxXZ"
 						type="video/mp4"
 						onPlay={this.handlePlay}
 					/>
