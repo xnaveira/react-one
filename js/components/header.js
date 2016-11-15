@@ -6,7 +6,7 @@ export default class Header extends React.Component {
 	    <Navbar collapseOnSelect>
 		<Navbar.Header>
 		    <Navbar.Brand>
-			<a href="#">Watch it</a>
+			<a href="#">Uflix</a>
 		    </Navbar.Brand>
 		</Navbar.Header>
 		<Navbar.Collapse>
