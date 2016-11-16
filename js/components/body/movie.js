@@ -1,13 +1,21 @@
 import React from "react";
+import { Link } from "react-router"
+
+
+
 export default class Movie extends React.Component {
-    	handleChange() {
-	    this.props.changeValue(this.props.playable.title);
-	}
 	render () {
-	    return (
-		<a href={this.props.playable.link} onMouseOver={this.handleChange.bind(this)} >
-		    <img  src={this.props.playable.img} />
-		</a>
+		return (
+			<div>
+				<Link to="/player/${this.props.playable.title}">
+					<img  src={this.props.playable.img} />
+				</Link>
+			</div>
 	    );
 	}
 }
+// <div>
+// 	<Link to="/player/${this.props.playable.title}" >
+// 		<img  src={this.props.playable.img} />
+// 	</Link>
+// </div>

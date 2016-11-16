@@ -1,7 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
-import MainP from "./components/mainp.js";
+
+import Layout from "./pages/layout";
+import Listing from "./pages/listing";
+import Search from "./pages/search";
+import Player from "./pages/player"
 
 const reactone = document.getElementById('reactone');
-ReactDOM.render(<MainP />, reactone);
+
+ReactDOM.render(
+   <Router history={hashHistory}>
+      <Route path="/" component={Layout}>
+         <IndexRoute component={Search} />
+         <Route path="listing" name="listing" component={Listing} />
+         <Route path="player(/:playable)" name="player" component={Player} />
+      </Route>
+   </Router>,
+   reactone);
+
