@@ -1,26 +1,21 @@
 import React from "react";
-import Video from "react-videojs";
+import { Link } from "react-router"
+
+
 
 export default class Movie extends React.Component {
-    	handleChange() {
-	    this.props.changeValue(this.props.playable.title);
-	}
 	render () {
-	    return (
-	    	<div>
-				<div>
-					<Video
-						src="http://ipfs.io/ipfs/QmX4ZZSGA6HLtwGkDmaEBmTyqZhWjcJQcoydrdmiBmnxXZ"
-						type="video/mp4"
-						onPlay={this.handlePlay}
-					/>
-				</div>
-				<div>
-					<a href={this.props.playable.link} onMouseOver={this.handleChange.bind(this)} >
-						<img  src={this.props.playable.img} />
-					</a>
-				</div>
+		return (
+			<div>
+				<Link to="/player/${this.props.playable.title}">
+					<img  src={this.props.playable.img} />
+				</Link>
 			</div>
 	    );
 	}
 }
+// <div>
+// 	<Link to="/player/${this.props.playable.title}" >
+// 		<img  src={this.props.playable.img} />
+// 	</Link>
+// </div>
