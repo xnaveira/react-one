@@ -10,11 +10,11 @@ export default class Header extends React.Component {
     	return (
 	    <Navbar>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="#">
+          <IndexLinkContainer to={{ pathname: '/'}}>
+            <Navbar.Brand>
               Uflix
-            </Link>
-          </Navbar.Brand>
+            </Navbar.Brand>
+          </IndexLinkContainer>
         </Navbar.Header>
         <Nav>
           <IndexLinkContainer to={{ pathname: '/'}}>
