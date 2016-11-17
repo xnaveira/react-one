@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <title>UFLIX</title>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <style type="text/css">
+        .flash          { background: #CEE5F5; padding: 0.5em;
+                          border: 1px solid #AACBE2; }
+        .error          { background: #F0D6D6; padding: 0.5em; }
+        body { padding-top: 70px; padding-bottom: 70px; }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UFLIX</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Trending</a>
+            </li>
+          </ul>
+          <div class="col-md-8 col-md-8">
+            <form class="nav navbar-form navbar-right" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="q">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="btn btn-sm" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid" id="player-container" style="background: black;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="embed-responsive-item" src="http://ipfs.io/ipfs/QmX4ZZSGA6HLtwGkDmaEBmTyqZhWjcJQcoydrdmiBmnxXZ" controls></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <br/>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h2>Guardians Of The Galaxy Trailer</h2>
+            <p>Blah blah information blah blah</p>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p><b>Uploaded by </b><i>Toby</i><b> on 16/11/2016</b></p>
+            <p>Check out this cool video :o !!!!!</p>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Comments</h4>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Add comment...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Post</button>
+              </span>
+            </div>
+            <br>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p>Awesome! :D</p> - <b>Bob</b>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p>They need to make a second already!</p> - <b>Alex</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <!--
+        <br/><br/><small><span class="glyphicon glyphicon-copyright-mark"></span> 2016 Uflix.io &nbsp;<a href="#top" class="pull-right"><span class="glyphicon glyphicon-arrow-up"></span> Top</a></small>
+        -->
+      </div>
+    </div>
+  </body>
+</html>
+
