@@ -1,13 +1,14 @@
 import React from "react";
-import { Panel } from 'react-bootstrap';
+import { Panel, Navbar } from 'react-bootstrap';
 
 export default class Footer extends React.Component {
     render() {
     	return (
-    		<div>
-          <br />
-    		  <Panel footer="This is a side project. 2016" />
-        </div>
+    	  <Navbar fixedBottom>
+          <Navbar.Text>
+              This is a side project. 2016
+          </Navbar.Text>
+        </Navbar>
 	);
     }
 }
