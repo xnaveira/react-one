@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavItem, Nav, FormGroup, FormControl, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Navbar, NavItem, Nav, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap';
 import { LinkContainer, IndexLinkContainer } from "react-router-bootstrap"
 
 
@@ -11,7 +11,7 @@ export default class Header extends React.Component {
         <Navbar.Header>
           <IndexLinkContainer to={{ pathname: '/'}}>
             <Navbar.Brand>
-              Uflix
+              P2FLIX
             </Navbar.Brand>
           </IndexLinkContainer>
         </Navbar.Header>
@@ -19,7 +19,7 @@ export default class Header extends React.Component {
           <Nav>
             <IndexLinkContainer to={{ pathname: '/'}}>
               <NavItem eventKey={1}>
-                Search
+                Index
               </NavItem>
             </IndexLinkContainer>
             <LinkContainer to={{ pathname: 'listing' }}>
@@ -33,10 +33,10 @@ export default class Header extends React.Component {
                 <FormControl type="text" placeholder="Search" />
               </FormGroup>
               {' '}
-              <Button type="submit" class="glyphicon glyphicon-search"/>
+              <Button type="submit"><Glyphicon glyph="search"/></Button>
           </Navbar.Form>
           <Navbar.Text pullRight>
-            <Button class="glyphicon glyphicon-log-in"/>
+            <Button bsSize="xsmall"><Glyphicon glyph="log-in"/></Button>
           </Navbar.Text>
         </Navbar.Collapse>
 	    </Navbar>

@@ -1,42 +1,52 @@
 import React from "react"
 import { Grid, Col, Row } from "react-bootstrap"
 import Movie from "../components/body/movie"
+import PlayableStore from "../stores/playablestore"
+import * as PlayableActions from "../actions/playableactions"
+
 
 export default class Listing extends React.Component {
   constructor() {
-    super();
+    super()
+    this.getAllPlayablesFromStore = this.getAllPlayablesFromStore.bind(this)
     this.state = {
-      playables: Array.of(
-
-        { 	img: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          link: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          title: "Avengers"
-        },
-        { 	img: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_UX182_CR0,0,182,268_AL_.jpg",
-          link: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_UX182_CR0,0,182,268_AL_.jpg",
-          title: "Guardians of the Galaxy"
-        },
-        { 	img: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          link: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          title: "Ironman"
-        }
-      )
+      playables: []
     }
-
   }
-  static render_movie(arr) {
-    return arr.map( (m, index) =>
-      <Col lg={2} md={5} sm={10}><Movie key={index} playable={m}/></Col>);
+
+  componentWillMount() {
+    PlayableStore.on("allplayablesupdated", this.getAllPlayablesFromStore)
+    PlayableActions.loadAllPlayables()
+  }
+
+  componentWillUnmount() {
+    PlayableStore.removeListener("allplayablesupdated", this.getAllPlayablesFromStore)
+  }
+
+  getAllPlayablesFromStore() {
+    this.setState({
+      playables : PlayableStore.getAllPlayables(),
+    })
+  }
+
+  render_movie(arr) {
+    return arr.map( (m) => {
+      return (
+          <Col md={2} sm={2}><Movie key={m.id} playable={m}/></Col>
+      )
+    })
   }
 
   render() {
+    console.log("listing::render ", this.state.playables)
     return (
       <Grid>
+        <br/><br/><br/><br/>
         <Row>
-          {Listing.render_movie(this.state.playables)}
+          {this.render_movie(this.state.playables)}
         </Row>
       </Grid>
-    );
+    )
   }
 }
 

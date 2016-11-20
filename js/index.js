@@ -13,9 +13,9 @@ const reactone = document.getElementById('reactone');
 ReactDOM.render(
    <Router history={hashHistory}>
       <Route path="/" component={Layout}>
-         <IndexRoute component={Search} />
+         <IndexRoute component={Layout} />
          <Route path="listing" name="listing" component={Listing} />
-         <Route path="player(/:playable)" name="player" component={Player} />
+         <Route path="player/:playable" name="player" component={Player} />
       </Route>
    </Router>,
    reactone);
