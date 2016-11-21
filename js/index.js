@@ -8,7 +8,7 @@ import Listing from "./pages/listing";
 import Search from "./pages/search";
 import Player from "./pages/player"
 
-const reactone = document.getElementById('reactone');
+const reactone = document.getElementById('p2flix');
 
 ReactDOM.render(
    <Router history={hashHistory}>
@@ -19,4 +19,3 @@ ReactDOM.render(
       </Route>
    </Router>,
    reactone);
-

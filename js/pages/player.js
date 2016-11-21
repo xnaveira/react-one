@@ -30,11 +30,10 @@ export default class Player extends React.Component {
 
   render() {
     const { playable } = this.state
-    const { title } = playable
+    const { title, description, uploaded_by, created, creator_comment } = playable
     const playable_url = `http://ipfs.io/ipfs/${playable.link}`
     return (
       <Grid fluid>
-        <br/><br/><br/><br/>
         <Row>
           <Col sm={1} md={1}/>
           <Col sm={10} md={10}>
@@ -50,7 +49,7 @@ export default class Player extends React.Component {
           <Col sm={10} md={10}>
             <Panel fluid>
               <h2>{title}</h2>
-              <p>Blah blah information blah blah</p>
+              <p>{description}</p>
             </Panel>
           </Col>
           <Col sm={1} md={1}/>
@@ -59,8 +58,8 @@ export default class Player extends React.Component {
           <Col sm={1} md={1}/>
           <Col sm={10} md={10}>
             <Panel fluid>
-              <p><b>Uploaded by </b><i>Toby</i><b> on 16/11/2016</b></p>
-              <p>Check out this cool video :o !!!!!</p>
+              <p><b>Uploaded by </b><i>{uploaded_by}</i><b> on {created}</b></p>
+              <p>{creator_comment}</p>
             </Panel>
           </Col>
           <Col sm={1} md={1}/>
