@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid, Col, Row } from "react-bootstrap"
+import { Grid, Col, Row, Panel } from "react-bootstrap"
 import Movie from "../components/body/movie"
 import PlayableStore from "../stores/playablestore"
 import * as PlayableActions from "../actions/playableactions"
@@ -32,7 +32,9 @@ export default class Listing extends React.Component {
   render_movie(arr) {
     return arr.map( (m) => {
       return (
-          <Col md={2} sm={2}><Movie key={m.id} playable={m}/></Col>
+          <Col lg={4} md={4} sm={6} xs={6}>
+  	       <Movie key={m.id} playable={m}/>
+         </Col>
       )
     })
   }
@@ -41,7 +43,6 @@ export default class Listing extends React.Component {
     console.log("listing::render ", this.state.playables)
     return (
       <Grid>
-        <br/><br/><br/><br/>
         <Row>
           {this.render_movie(this.state.playables)}
         </Row>

@@ -40,6 +40,6 @@ export default class Header extends React.Component {
           </Navbar.Text>
         </Navbar.Collapse>
 	    </Navbar>
-	); 
+	);
     }
 }
